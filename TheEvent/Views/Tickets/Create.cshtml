@@ -1,0 +1,44 @@
+﻿@model TheEvent.Models.Tickets
+
+@{ ViewData["Title"] = "Register"; }
+@{ Layout = "_Layout"; }
+<h4>Book Schedules</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="Enter Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" placeholder="Enter Age Number" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" placeholder="Enter Address" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfTicket" class="control-label"></label>
+                <input asp-for="NumberOfTicket" class="form-control" placeholder="Enter NumberOfTicket" />
+                <span asp-validation-for="NumberOfTicket" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScheduleId" class="control-label"></label>
+                <select asp-for="ScheduleId" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.ListSchedules,"Id", "Name"))">
+                </select>
+                <span asp-validation-for="ScheduleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" type="button" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model TheEvent.Models.Tickets
+
+@{ ViewData["Title"] = "Edit"; }
+@{ Layout = "_Layout"; }
+
+<h4>Edit Book Schedules</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12 font-weight-bold">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input Gender="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfTicket" class="control-label"></label>
+                <input asp-for="NumberOfTicket" class="form-control" />
+                <span asp-validation-for="NumberOfTicket" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" type="button" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
